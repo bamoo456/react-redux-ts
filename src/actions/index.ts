@@ -32,11 +32,9 @@ export const fetchTodos = () => {
     }
 }
 
-export const deleteTodo = (target: Todo) => {
-    return (dispatch: Dispatch) => {
-        dispatch<DeleteTodoAction>({
-            type: ActionTypes.deleteTodo,
-            payload: target,
-        });
-    }
+export const deleteTodo = (target: Todo): DeleteTodoAction => {
+    return {
+        type: ActionTypes.deleteTodo,
+        payload: target,
+    };
 }

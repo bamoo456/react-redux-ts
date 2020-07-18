@@ -6,15 +6,14 @@ import { StoreState } from '../reducers';
 
 interface AppPros {
     todos: Todo[];
-    fetchTodos(): any;
-    deleteTodo(target: Todo): any;
+    fetchTodos(): Function;
+    deleteTodo: typeof deleteTodo;
 }
 
 interface AppActions {
-    fetchTodos(): any;
-    deleteTodo(target: Todo): any;
+    fetchTodos(): Function;
+    deleteTodo: typeof deleteTodo;
 }
-
 
 const mapStateToProps = ({ todos }: StoreState): { todos: Todo[] } => {
     return { todos };
