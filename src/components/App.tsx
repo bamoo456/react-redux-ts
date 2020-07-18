@@ -10,10 +10,20 @@ interface AppPros {
     deleteTodo(target: Todo): any;
 }
 
+interface AppActions {
+    fetchTodos(): any;
+    deleteTodo(target: Todo): any;
+}
+
 
 const mapStateToProps = ({ todos }: StoreState): { todos: Todo[] } => {
     return { todos };
 }
+
+const mapActionToProps: AppActions = {
+    fetchTodos,
+    deleteTodo,
+};
 
 class _App extends React.Component<AppPros> {
 
@@ -45,5 +55,5 @@ class _App extends React.Component<AppPros> {
 
 export const App = connect(
     mapStateToProps,
-    { fetchTodos, deleteTodo },
+    mapActionToProps,
 )(_App);
